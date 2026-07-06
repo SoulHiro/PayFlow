@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PayFlow
 
-## Getting Started
+Mini sistema de gestão de contas a pagar. Projeto pessoal com foco em demonstrar boas práticas de arquitetura frontend/backend com Next.js e TypeScript.
 
-First, run the development server:
+## Status
+
+🚧 Em desenvolvimento — fase inicial de setup do ambiente e schema do banco de dados.
+
+## Stack
+
+Next.js, TypeScript, React, Tailwind CSS, Drizzle ORM, SQLite, Vitest, Sentry, Vercel
+
+## Como rodar localmente
 
 ```bash
+git clone https://github.com/SoulHiro/payflow.git
+cd payflow
+npm install
+cp .env.example .env.local
+npm run db:push
+npm run db:seed
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Comando | Descrição |
+|---|---|
+| `npm run dev` | Inicia o servidor de desenvolvimento |
+| `npm run build` | Build de produção |
+| `npm run lint` | Roda o ESLint |
+| `npm run test` | Roda os testes (Vitest) |
+| `npm run db:generate` | Gera migrations do Drizzle |
+| `npm run db:push` | Aplica o schema no banco local |
+| `npm run db:seed` | Popula o banco com dados fake |
 
-## Learn More
+## Roadmap
 
-To learn more about Next.js, take a look at the following resources:
+- [ ] Schema do banco + seed de dados
+- [ ] Tela de listagem com filtro e paginação
+- [ ] Formulário de cadastro de nota com optimistic UI
+- [ ] Endpoint de webhook simulando integração com ERP externo
+- [ ] Testes unitários das regras de negócio
+- [ ] Observabilidade com Sentry
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Licença
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Projeto pessoal, sem fins comerciais.
